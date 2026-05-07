@@ -112,3 +112,6 @@ table td {
 tr:nth-child(even) {
     background-color: #dcdcf1;
 }
+tr:hover {
+    background-color: #ebfcec;
+}

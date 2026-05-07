@@ -92,3 +92,23 @@ h2 {
     bottom: 0;
     width: 100%;
 }
+table {
+    border: 1px solid #373737;
+    border-collapse: collapse;
+    width: 80%;
+    margin: 0 auto;
+}
+table th{
+    border: 1px solid #373737;
+    padding: 8px;
+    background-color: #34495e;
+    color: white;
+}
+table td {
+    border: 1px solid #373737;
+    padding: 8px;
+    text-align: left;
+}
+tr:nth-child(even) {
+    background-color: #dcdcf1;
+}

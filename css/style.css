@@ -42,6 +42,9 @@ h2 {
     background-color: #f2f2f2;
     color: #333;
 }
+.topnav-right {
+    float: right;
+}
 .banner {
     background-color: #3498db;
     color: white;

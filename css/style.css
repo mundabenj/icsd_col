@@ -80,7 +80,7 @@ h2 {
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 950px) {
     .content, .sidebar {
         width: 100%;
         padding: 10px;

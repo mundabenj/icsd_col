@@ -63,14 +63,45 @@
     const sum = num1 + num2;
     document.write("<br>Sum: " + sum);
 
-    const age = 20;
+    const age = 12;
     // age += 5; // This will cause an error because 'age' is a constant
     document.write("<br>New age: " + age);
 
     // var fname = prompt("Enter your full name:");
     // document.write("<br>Hello : " + fname);
 
-    var fruits = ["Apple", "Banana", "Cherry"];
+    var lname = "Smith";
+    var mname = "Anna";
+    var fruits = ["Apple", "Banana", "Cherry", 56, 48, true];
+
+    document.write("<br>Last Name: " + lname);
+    document.write("<br>Middle Name: " + mname);
+    document.write("<br>Fruits: " + fruits);
+    document.write("<br>Second Fruit: " + fruits[1]); // output: Banana
+    document.write("<br>Joined Fruits: " + fruits.join("/ ")); // output: Apple-Banana-Cherry-56-48-true
+
+    // Conditional statement
+    if (age >= 18) {
+        document.write("<br>You are an adult.");
+    } else {
+        document.write("<br>You are NOT an adult.");
+    }
+
+    var DateTime = new Date();
+    document.write("<br>Current Date and Time: " + DateTime);
+    var hours = DateTime.getHours();
+    var minutes = DateTime.getMinutes();
+    var seconds = DateTime.getSeconds();
+    
+    document.write("<br>Current Time: " + hours + ":" + minutes + ":" + seconds);
+
+    if (hours < 12) {
+        document.write("<br>Good morning " + mname + "!");
+    } else if (hours < 18) {
+        document.write("<br>Good afternoon " + mname + "!");
+    } else {
+        document.write("<br>Good evening " + mname + "!");
+    }
 
 </script>
 

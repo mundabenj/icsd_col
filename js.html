@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
 </head>
-<body>
+<body onload="StarTime()">
 
     <p id="demo"></p>
 
@@ -87,23 +88,13 @@
         document.write("<br>You are NOT an adult.");
     }
 
-    var DateTime = new Date();
-    document.write("<br>Current Date and Time: " + DateTime);
-    var hours = DateTime.getHours();
-    var minutes = DateTime.getMinutes();
-    var seconds = DateTime.getSeconds();
-    
-    document.write("<br>Current Time: " + hours + ":" + minutes + ":" + seconds);
 
-    if (hours < 12) {
-        document.write("<br>Good morning " + mname + "!");
-    } else if (hours < 18) {
-        document.write("<br>Good afternoon " + mname + "!");
-    } else {
-        document.write("<br>Good evening " + mname + "!");
-    }
 
+// call or invoke the function
+// document.write(greetings(mname, hours));
 </script>
+
+<p id="ReadTime"></p>
 
 <br>
 <br>

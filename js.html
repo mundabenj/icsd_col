@@ -125,6 +125,74 @@ var person = {
 document.write("<br>Email: " + person.email);
 document.write("<br>Phone: " + person.phone);
 
+// userDetails is an object with nested objects and arrays
+var userDetails = {
+    "Director": {
+        name: ["Alex", "Otema"],
+        age: 45,
+        gender: "Male",
+        interests: ["Traveling", "Cooking", "Photography"],
+        email: {
+            personal: "alex.personal@example.com",
+            work: "alex.work@example.com"
+        },
+        phone: {
+            home: "123-456-7890",
+            office: "098-765-4321"
+        },
+        address: {
+            home: "123 Main St, Cityville",
+            office: "456 Business Rd, Metropolis"
+        },
+        "P.O.Box": "PO Box 12345"
+    },
+    "Manager": {
+        name: ["Jane", "Doe"],
+        age: 35,
+        gender: "Female",
+        interests: ["Reading", "Fitness", "Gardening"],
+        email: {
+            personal: "jane.personal@example.com",
+            work: "jane.work@example.com"
+        },
+        phone: {
+            home: "123-456-7890",
+            office: "098-765-4321"
+        },
+        address: {
+            home: "123 Main St, Cityville",
+            office: "456 Business Rd, Metropolis"
+        },
+        "P.O.Box": "PO Box 12345"
+    },
+    "Secretary": {
+        name: ["Emily", "Okello"],
+        age: 28,
+        gender: "Female",
+        interests: ["Reading", "Fitness", "Gardening"],
+        email: {
+            personal: "emily.personal@example.com",
+            work: "emily.work@example.com"
+        },
+        phone: {
+            home: "123-456-7890",
+            office: "098-765-4321"
+        },
+        address: {
+            home: "123 Main St, Cityville",
+            office: "456 Business Rd, Metropolis"
+        },
+        "P.O.Box": "PO Box 12345"
+    },
+    SecretaryBio: function() {
+        return "Madam " + this.Secretary.name.join(" ") + " is our secretary " + this.Secretary.age + "-year-old " + this.Secretary.gender + " who enjoys " + this.Secretary.interests.join(", ") + ". You can contact her at " + this.Secretary.email.work + " or " + this.Secretary.phone.office + ". Or schedule a meeting at her office address: " + this.Secretary.address.office + ".";
+    }
+};
+// Director's office
+document.write("<br>Director's Office: " + userDetails.Director.address.office);
+// Secretary's bio
+document.write("<br>Secretary's Bio: " + userDetails.SecretaryBio());
+
 </script>
 
 <br>

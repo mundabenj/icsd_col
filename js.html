@@ -197,6 +197,46 @@ document.write("<br>Secretary's Bio: " + userDetails.SecretaryBio());
 
 <br>
 <br>
+<script>
+    // Loops
+    // while loop
+    document.write("<h4>While Loop:</h4>");
+    var i = 8; // initialization
+    while (i <= 15) { // condition
+        document.write(i + "<br>"); // code to be executed
+        i+=2; // increment by 2
+    }
+    // do-while loop
+    document.write("<h4>Do-While Loop:</h4>");
+    var j = 10; // initialization
+    do {
+        document.write(j + "<br>"); // code to be executed
+        j+=2; // increment by 2
+    } while (j <= 20); // condition
+    // for loop
+    document.write("<h4>For Loop:</h4>");
+    for (var k = 1; k <= 10; k++) { // initialization; condition; increment
+        document.write(k + "<br>"); // code to be executed
+    }
+    // for-of loop (for iterating over arrays)
+    document.write("<h4>For-Of Loop:</h4>");
+    var colors = ["Red", "Green", "Blue", "Yellow"];
+    for (var color of colors) {
+        document.write(color + "<br>"); // code to be executed
+    }
+    // for-in loop (for iterating over object properties)
+    document.write("<h4>For-In Loop:</h4>");
+    var car = {
+        make: "Toyota",
+        model: "Camry",
+        year: 2020
+    };
+    for (var carDetail in car) {
+        document.write(carDetail + ": " + car[carDetail] + "<br>"); // code to be executed
+    }
+</script>
+
+
 <br>
 <br>
 <br>

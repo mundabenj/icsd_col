@@ -235,9 +235,35 @@ document.write("<br>Secretary's Bio: " + userDetails.SecretaryBio());
         document.write(carDetail + ": " + car[carDetail] + "<br>"); // code to be executed
     }
 </script>
-
-
 <br>
+<h4>Select registration date</h4>
+<select>
+    <option>Select Day</option>
+    <script>
+        for (var day = 1; day <= 31; day++) {
+            document.write('<option value="' + day + '">' + day + '</option>');
+        }
+    </script>
+</select>
+<select>
+    <option>Select Month</option>
+    <script>
+        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        for (var month of months) {
+            document.write('<option value="' + month + '">' + month + '</option>');
+        }
+    </script>
+</select>
+<select>
+    <option>Select Year</option>
+    <script>
+        var currentYear = new Date().getFullYear();
+        for (var year = currentYear; year >= 1990; year--) {
+            document.write('<option value="' + year + '">' + year + '</option>');
+        }
+    </script>
+</select>
+
 <br>
 <br>
 

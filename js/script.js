@@ -38,3 +38,27 @@ function formaTime(i) {
     }
     return i;
 }
+
+function getDaysInMonth(TimeDate) {
+        // Days in months
+    var currentYear = TimeDate.getFullYear();
+    var currentMonth = TimeDate.getMonth(); // getMonth() returns 0-11
+    var monthsWith31Days = [0, 2, 4, 6, 7, 9, 11]; // January, March, May, July, August, October, December
+    var monthsWith30Days = [3, 5, 8, 10]; // April, June, September, November
+    var februaryMonth = 1; // February
+    if(monthsWith30Days.includes(currentMonth)) {
+        var daysInMonth = 30;
+    } else if(monthsWith31Days.includes(currentMonth)) {
+        var daysInMonth = 31;
+    } else if(currentMonth === februaryMonth) {     
+        var isLeapYear = (currentYear % 4 === 0 && currentYear % 100 !== 0) || (currentYear % 400 === 0);
+        // var daysInFebruary = isLeapYear ? 29 : 28;
+        // var daysInMonth = daysInFebruary;
+        if(isLeapYear) {
+            var daysInMonth = 29;
+        } else {
+            var daysInMonth = 28;
+        }
+    }
+    return daysInMonth;
+}

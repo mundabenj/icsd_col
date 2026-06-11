@@ -234,13 +234,15 @@ document.write("<br>Secretary's Bio: " + userDetails.SecretaryBio());
     for (var carDetail in car) {
         document.write(carDetail + ": " + car[carDetail] + "<br>"); // code to be executed
     }
+        var TimeDate = new Date();
 </script>
 <br>
 <h4>Select registration date</h4>
+
 <select>
     <option>Select Day</option>
     <script>
-        for (var day = 1; day <= 31; day++) {
+        for (var day = 1; day <= getDaysInMonth(TimeDate); day++) {
             document.write('<option value="' + day + '">' + day + '</option>');
         }
     </script>
@@ -257,7 +259,7 @@ document.write("<br>Secretary's Bio: " + userDetails.SecretaryBio());
 <select>
     <option>Select Year</option>
     <script>
-        var currentYear = new Date().getFullYear();
+        var currentYear = TimeDate.getFullYear();
         for (var year = currentYear; year >= 1990; year--) {
             document.write('<option value="' + year + '">' + year + '</option>');
         }

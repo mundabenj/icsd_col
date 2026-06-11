@@ -66,5 +66,40 @@
         <button type="submit">Register</button>
         <p id="successMessage" class="success"></p>
     </form>
+
+    <script>
+        // Create a function to validate the form
+        // Create a listener for the form submission
+        document.getElementById('registrationForm').addEventListener('submit', function(event){
+            event.preventDefault(); // Prevent the default form submission
+
+            // Clear previous error messages
+            document.getElementById('fullNameError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('phoneError').textContent = '';
+            document.getElementById('passwordError').textContent = '';
+            document.getElementById('confirmPasswordError').textContent = '';
+            document.getElementById('successMessage').textContent = '';
+
+            // Flag to track if the form is valid
+            let isValid = true;
+
+            // Validate Full Name
+            const fullName = document.getElementById('fullName').value.trim();
+            if (fullName === '') { // Check if the full name is empty
+                document.getElementById('fullNameError').textContent = 'Full Name is required.';
+                isValid = false;
+            }
+
+            if(isValid){
+                document.getElementById('successMessage').textContent = 'Registration successful!';
+                document.getElementById('successMessage').className = 'success'; // Set the class to success for styling
+            }else{
+                document.getElementById('successMessage').textContent = 'Please fix the error(s) above.';
+                document.getElementById('successMessage').className = 'error'; // Set the class to error for styling
+            }
+
+        });
+    </script>
 </body>
 </html>

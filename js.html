@@ -240,27 +240,30 @@ document.write("<br>Secretary's Bio: " + userDetails.SecretaryBio());
 <h4>Select registration date</h4>
 
 <select>
-    <option>Select Day</option>
     <script>
+        document.write('<option value="' + TimeDate.getDate() + '">' + TimeDate.getDate() + '</option>');
         for (var day = 1; day <= getDaysInMonth(TimeDate); day++) {
+            if(day === TimeDate.getDate()) continue; // Skip the current day since it's already added as the default option
             document.write('<option value="' + day + '">' + day + '</option>');
         }
     </script>
 </select>
 <select>
-    <option>Select Month</option>
     <script>
         var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        document.write('<option value="' + TimeDate.getMonth() + '">' + months[TimeDate.getMonth()] + '</option>');
         for (var month of months) {
+            if(month === months[TimeDate.getMonth()]) continue; // Skip the current month since it's already added as the default option
             document.write('<option value="' + month + '">' + month + '</option>');
         }
     </script>
 </select>
 <select>
-    <option>Select Year</option>
     <script>
         var currentYear = TimeDate.getFullYear();
+        document.write('<option value="' + currentYear + '">' + currentYear + '</option>');
         for (var year = currentYear; year >= 1990; year--) {
+            if(year === currentYear) continue; // Skip the current year since it's already added as the default option
             document.write('<option value="' + year + '">' + year + '</option>');
         }
     </script>

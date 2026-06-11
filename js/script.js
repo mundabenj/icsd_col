@@ -40,25 +40,24 @@ function formaTime(i) {
 }
 
 function getDaysInMonth(TimeDate) {
-        // Days in months
-    var currentYear = TimeDate.getFullYear();
+    var currentYear = TimeDate.getFullYear(); // Get the current year
     var currentMonth = TimeDate.getMonth(); // getMonth() returns 0-11
     var monthsWith31Days = [0, 2, 4, 6, 7, 9, 11]; // January, March, May, July, August, October, December
     var monthsWith30Days = [3, 5, 8, 10]; // April, June, September, November
     var februaryMonth = 1; // February
     if(monthsWith30Days.includes(currentMonth)) {
-        var daysInMonth = 30;
+        var daysInMonth = 30; // If the current month is in the list of months with 30 days, set daysInMonth to 30
     } else if(monthsWith31Days.includes(currentMonth)) {
-        var daysInMonth = 31;
+        var daysInMonth = 31; // If the current month is in the list of months with 31 days, set daysInMonth to 31
     } else if(currentMonth === februaryMonth) {     
-        var isLeapYear = (currentYear % 4 === 0 && currentYear % 100 !== 0) || (currentYear % 400 === 0);
+        var isLeapYear = (currentYear % 4 === 0 && currentYear % 100 !== 0) || (currentYear % 400 === 0); // Check if the current year is a leap year
         // var daysInFebruary = isLeapYear ? 29 : 28;
         // var daysInMonth = daysInFebruary;
         if(isLeapYear) {
-            var daysInMonth = 29;
+            var daysInMonth = 29; // If it's a leap year, February has 29 days
         } else {
-            var daysInMonth = 28;
+            var daysInMonth = 28; // If it's not a leap year, February has 28 days
         }
     }
-    return daysInMonth;
+    return daysInMonth; // Return the number of days in the current month
 }

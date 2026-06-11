@@ -262,7 +262,8 @@ document.write("<br>Secretary's Bio: " + userDetails.SecretaryBio());
     <script>
         var currentYear = TimeDate.getFullYear();
         document.write('<option value="' + currentYear + '">' + currentYear + '</option>');
-        for (var year = currentYear; year >= 1990; year--) {
+        var minYear = currentYear - 30; // Set a minimum year (e.g., 30 years ago)
+        for (var year = currentYear; year >= minYear; year--) {
             if(year === currentYear) continue; // Skip the current year since it's already added as the default option
             document.write('<option value="' + year + '">' + year + '</option>');
         }

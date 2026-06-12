@@ -100,19 +100,12 @@
             // Validate Email
             const email = document.getElementById('email').value.trim();
             const validDomains = ['gmail.com', 'yahoo.com', 'outlook.com']; // List of valid email domains
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regular expression for validating email format
             const emailDomain = email.split('@')[1]; // Get the domain part of the email
-            // alex@yahoo.com -> 
-            // ['alex', 'yahoo.com'] -> 'yahoo.com'
-            // [0, 1] -> 1
-
-
-
-
-
             if (email === '') { // Check if the email is empty
                 document.getElementById('emailError').textContent = 'Email is required.';
                 isValid = false;
-            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { // Check if the email is in a valid format
+            } else if (!emailPattern.test(email)) { // Check if the email is in a valid format
                 document.getElementById('emailError').textContent = 'Please enter a valid email address.';
                 isValid = false;
             } else if (!validDomains.includes(emailDomain)) { // Check if the email domain is valid

@@ -116,12 +116,34 @@
 
             // Validate Phone Number
             const phone = document.getElementById('phone').value.trim();
-            const phonePattern = /^\+?\d{3,15}$/; // Regular expression for validating phone number (3 to 15 digits) with an optional leading plus sign
+            const phonePattern = /^\+?\d{5,15}$/; // Regular expression for validating phone number (5 to 15 digits) with an optional leading plus sign
             if (phone === '') { // Check if the phone number is empty
                 document.getElementById('phoneError').textContent = 'Phone number is required.';
                 isValid = false;
             } else if (!phonePattern.test(phone)) { // Check if the phone number is in a valid format
-                document.getElementById('phoneError').textContent = 'Please enter a valid phone number (3 to 15 digits) with an optional leading plus sign.';
+                document.getElementById('phoneError').textContent = 'Please enter a valid phone number (5 to 15 digits) with an optional leading plus sign.';
+                isValid = false;
+            }
+
+            // Validate Password
+            const password = document.getElementById('password').value;
+            if(password === ''){ // Check if the password is empty
+                document.getElementById('passwordError').textContent = 'Password is required.';
+                isValid = false;
+            } else if (password.length < 4) { // Check if the password is less than 4 characters
+                document.getElementById('passwordError').textContent = 'Password must be at least 4 characters long.';
+                isValid = false;
+            } else if(!/[A-Z]/.test(password)){ // Check if the password contains at least one uppercase letter
+                document.getElementById('passwordError').textContent = 'Password must contain at least one uppercase letter.';
+                isValid = false;
+            }else if(!/[a-z]/.test(password)){ // Check if the password contains at least one lowercase letter
+                document.getElementById('passwordError').textContent = 'Password must contain at least one lowercase letter.';
+                isValid = false;
+            } else if(!/\d/.test(password)){ // Check if the password contains at least one digit
+                document.getElementById('passwordError').textContent = 'Password must contain at least one digit.';
+                isValid = false;
+            } else if(!/[!@#$%^&*(),.+?":{}|<>]/.test(password)){ // Check if the password contains at least one special character
+                document.getElementById('passwordError').textContent = 'Password must contain at least one special character.';
                 isValid = false;
             }
 

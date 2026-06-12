@@ -36,7 +36,7 @@
     </style>
 </head>
 <body>
-    <form action="#" method="post" id="registrationForm" class="registration-form" autocomplete="off">
+    <form action="#" method="post" id="registrationForm" class="registration-form" autocomplete="on">
         <h2>Registration Form</h2>
         <div class="field">
             <label for="fullName">Full Name:</label><br>
@@ -86,13 +86,14 @@
 
             // Validate Full Name
             const fullName = document.getElementById('fullName').value.trim();
+            const namePattern = /^[a-zA-Z\s']+$/; // Regular expression for validating full name (letters, spaces, and apostrophes)
             if (fullName === '') { // Check if the full name is empty
                 document.getElementById('fullNameError').textContent = 'Full Name is required.';
                 isValid = false;
             }else if(fullName.length < 3){ // Check if the full name is less than 3 characters
                 document.getElementById('fullNameError').textContent = 'Full Name must be at least 3 characters long.';
                 isValid = false;
-            }else if(!/^[a-zA-Z\s']+$/.test(fullName)){ // Check if the full name contains only letters, spaces, and apostrophes
+            }else if(!namePattern.test(fullName)){ // Check if the full name contains only letters, spaces, and apostrophes
                 document.getElementById('fullNameError').textContent = 'Full Name can only contain letters, spaces, and apostrophes.';
                 isValid = false;
             }
@@ -110,6 +111,17 @@
                 isValid = false;
             } else if (!validDomains.includes(emailDomain)) { // Check if the email domain is valid
                 document.getElementById('emailError').textContent = 'Email domain must be one of the following: ' + validDomains.join(', ') + '.';
+                isValid = false;
+            }
+
+            // Validate Phone Number
+            const phone = document.getElementById('phone').value.trim();
+            const phonePattern = /^\+?\d{3,15}$/; // Regular expression for validating phone number (3 to 15 digits) with an optional leading plus sign
+            if (phone === '') { // Check if the phone number is empty
+                document.getElementById('phoneError').textContent = 'Phone number is required.';
+                isValid = false;
+            } else if (!phonePattern.test(phone)) { // Check if the phone number is in a valid format
+                document.getElementById('phoneError').textContent = 'Please enter a valid phone number (3 to 15 digits) with an optional leading plus sign.';
                 isValid = false;
             }
 
